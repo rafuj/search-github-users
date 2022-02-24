@@ -17,7 +17,7 @@ ReactFC.fcRoot(FusionCharts, Column2D, FusionTheme);
 const ChartComponent = ({ data }) => {
 	const chartConfigs = {
 		type: "bar3d", // The chart type
-		// width: "700", // Width of the chart
+		width: "100%",
 		height: "400", // Height of the chart
 		dataFormat: "json", // Data type
 		dataSource: {
