@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { MdSearch } from "react-icons/md";
 import styled from "styled-components";
 import { GithubContext } from "../context/context";
 const Search = () => {
-	const [user, setUser] = React.useState("");
+	const [user, setUser] = React.useState("rafuj");
 	const { request, error, searchGithubUser, isLoading } =
 		React.useContext(GithubContext);
 	//get things from global context
@@ -14,6 +14,10 @@ const Search = () => {
 			searchGithubUser(user);
 		}
 	};
+	useEffect(() => {
+		searchGithubUser("rafuj");
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
 
 	return (
 		<section className="section">

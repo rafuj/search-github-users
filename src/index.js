@@ -1,16 +1,24 @@
+import { Auth0Provider } from "@auth0/auth0-react";
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import { GithubProvider } from "./context/context";
 import "./index.css";
 import * as serviceWorker from "./serviceWorker";
-// import { Auth0Provider } from '@auth0/auth0-react';
-
+// dev-853i0uvw.us.auth0.com
+// 1OI1II9hcMBoA0vA1wRUhZ2sp50jgFEh
 ReactDOM.render(
 	<React.StrictMode>
-		<GithubProvider>
-			<App />
-		</GithubProvider>
+		<Auth0Provider
+			domain="dev-853i0uvw.us.auth0.com"
+			clientId="1OI1II9hcMBoA0vA1wRUhZ2sp50jgFEh"
+			redirectUri={window.location.origin}
+			cacheLocation="localstorage"
+		>
+			<GithubProvider>
+				<App />
+			</GithubProvider>
+		</Auth0Provider>
 	</React.StrictMode>,
 	document.getElementById("root")
 );

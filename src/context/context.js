@@ -1,17 +1,14 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import mockFollowers from "./mockData.js/mockFollowers";
-import mockRepos from "./mockData.js/mockRepos";
-import mockUser from "./mockData.js/mockUser";
 const rootUrl = "https://api.github.com";
 
 const GithubContext = React.createContext();
 
 const GithubProvider = ({ children }) => {
-	const [githubUser, setGithubUser] = useState(mockUser);
-	const [repos, setRepos] = useState(mockRepos);
-	const [followers, setFollowers] = useState(mockFollowers);
+	const [githubUser, setGithubUser] = useState([]);
+	const [repos, setRepos] = useState([]);
+	const [followers, setFollowers] = useState([]);
 	//request loading
 	const [request, setRequest] = useState(0);
 	const [isLoading, setIsLoading] = useState(false);
